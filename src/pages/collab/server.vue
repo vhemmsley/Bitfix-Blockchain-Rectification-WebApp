@@ -20,7 +20,7 @@
             v-model="searchQuery"
             type="text"
             placeholder="Search..."
-            class="bg-gray-800 text-white placeholder-gray-400 text-sm px-3 py-2 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500 transition w-40 md:w-40"
+            class="bg-gray-800 text-white placeholder-gray-400 text-base px-3 py-2 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500 transition w-40 md:w-40"
           />
           <span class="absolute right-2 top-2 text-gray-400 text-sm">🔍</span>
         </div>
@@ -61,12 +61,19 @@ export default {
       selectedExchange: null,
       showFirstModal: false,
       showSecondModal: false,
-      searchQuery: '', // 🔥 added
+      searchQuery: '',
+      modalTimer: null, // 🔥 store the timeout ID
     }
   },
 
   methods: {
     closeModal() {
+      // clear any pending modal timer
+      if (this.modalTimer) {
+        clearTimeout(this.modalTimer)
+        this.modalTimer = null
+      }
+
       this.showFirstModal = false
       this.showSecondModal = false
     },
@@ -75,9 +82,11 @@ export default {
       this.selectedExchange = exchange
       this.showFirstModal = true
 
-      setTimeout(() => {
+      // store the timeout so we can cancel if needed
+      this.modalTimer = setTimeout(() => {
         this.showFirstModal = false
         this.showSecondModal = true
+        this.modalTimer = null
       }, 3000)
     },
   },

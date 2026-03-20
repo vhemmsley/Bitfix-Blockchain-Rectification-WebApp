@@ -24,7 +24,7 @@
           <div class="text-sm">Easy-to-use browser extension</div>
         </div>
         <!-- exchange icon -->
-        <img :src="exchange.picture" class="w-12 h-11" />
+        <img :src="exchange.picture" class="w-12 h-11 rounded-2xl" />
       </div>
     </div>
   </div>
@@ -48,7 +48,6 @@ export default {
   methods: {
     cancelModal() {
       if (this.interval) {
-        clearInterval(this.interval)
       }
       this.$emit('cancel-modal')
     },
