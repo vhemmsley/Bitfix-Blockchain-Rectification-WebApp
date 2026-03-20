@@ -1,9 +1,6 @@
 {
-  "build": {
-    "env": {
-      "NODE_VERSION": "20"
-    },
-    "outputDirectory": "dist"
+  "env": {
+    "NODE_VERSION": "20"
   },
   "rewrites": [{ "source": "/(.*)", "destination": "/" }]
 }
