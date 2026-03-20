@@ -3,7 +3,6 @@
     "env": {
       "NODE_VERSION": "20"
     },
-    "framework": "vite",
     "outputDirectory": "dist"
   },
   "rewrites": [{ "source": "/(.*)", "destination": "/" }]
