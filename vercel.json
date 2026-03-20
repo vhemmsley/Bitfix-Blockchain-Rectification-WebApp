@@ -3,7 +3,7 @@
     "env": {
       "NODE_VERSION": "20"
     },
-    "command": "npm run build",
+    "framework": "vite",
     "outputDirectory": "dist"
   },
   "rewrites": [{ "source": "/(.*)", "destination": "/" }]
