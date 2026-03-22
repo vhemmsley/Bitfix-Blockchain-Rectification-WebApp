@@ -1,8 +1,8 @@
 <template>
-  <div class="flex flex-col p-10 bg-white w-[90vw] h-[70vh] md:h-[90vh] md:w-[30vw] rounded-xl">
+  <div class="flex flex-col p-10 bg-white w-[90vw] md:w-[30vw] rounded-xl">
     <!-- Header -->
     <div class="flex flex-row justify-between items-center space-x-2">
-      <img :src="exchange.picture" class="w-10 h-10" />
+      <img :src="exchange.picture" class="w-10 h-10 rounded-xl" />
       <div class="text-black">Connect your {{ exchange.name }} Manually</div>
     </div>
 

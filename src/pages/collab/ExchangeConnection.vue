@@ -16,7 +16,7 @@
       </div>
 
       <div
-        class="flex flex-row border justify-between border-black rounded-lg w-full p-2 text-black"
+        class="flex flex-row border justify-between space-x-3 border-black rounded-lg w-full p-2 text-black"
       >
         <!-- exchange details -->
         <div class="flex flex-col">
@@ -24,7 +24,7 @@
           <div class="text-sm">Easy-to-use browser extension</div>
         </div>
         <!-- exchange icon -->
-        <img :src="exchange.picture" class="w-12 h-11 rounded-2xl" />
+        <img :src="exchange.picture" class="w-12 h-11 rounded-xl" />
       </div>
     </div>
   </div>
