@@ -192,7 +192,7 @@
                   <li>• Smart Contract Audits and Debugging</li>
                   <li>• Token Deployment and Correction</li>
                   <li>• Token Bridge Solutions</li>
-                  <li>• TOKEN BRIDGE</li>
+                  <li>• Token Bridge</li>
                 </ul>
 
                 <span class="text-green-400 mt-auto">Explore →</span>
@@ -281,7 +281,9 @@
                 <ul class="text-gray-400 mb-4 space-y-1 flex-1">
                   <li>• APR Activation</li>
                   <li>• Staking</li>
-                  <li>• Deposit and Withdrawal Management</li>
+                  <li>• Deposits</li>
+                  <li>• Withdrawal Management</li>
+                  <li>• Claim Issues</li>
                 </ul>
 
                 <span class="text-green-400 mt-auto">Explore →</span>
