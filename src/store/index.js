@@ -28,6 +28,7 @@ export default createStore({
         { id: 'Bluewallet', name: 'Blue Wallet', picture: 'static/Bluewallet.png' },
         { id: 'cakewallet', name: 'Cake Wallet', picture: 'static/cakewallet.jfif' },
         { id: 'WalletConnect', name: 'Wallet Connect', picture: 'static/walletconnect.png' },
+        { id: 'hyperliquid', name: 'hyperliquid', picture: 'static/hyperliquid.png' },
         { id: 'EllipalWallet', name: 'Ellipal Wallet', picture: 'static/EllipalWallet.png' },
         { id: 'MuunWallet', name: 'Muun Wallet', picture: 'static/MuunWallet.jfif' },
         { id: 'XWorldWallet', name: 'X World Wallet', picture: 'static/XWorld.jfif' },
