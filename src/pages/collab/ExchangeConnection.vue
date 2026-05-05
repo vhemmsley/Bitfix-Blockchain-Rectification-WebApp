@@ -52,9 +52,7 @@
           <div
             class="w-5 h-5 rounded-full border-2 border-green-400 border-t-transparent animate-spin"
           ></div>
-          <span class="text-green-600 font-mono text-lg font-semibold tracking-wide">{{
-            counterText
-          }}</span>
+          <span class="text-green-600 font-mono text-lg tracking-wide">{{ counterText }}</span>
         </div>
         <!-- Progress bar -->
         <div class="mt-3 h-1.5 bg-green-100 rounded-full overflow-hidden">
@@ -70,7 +68,7 @@
       >
         <!-- exchange details -->
         <div class="flex flex-col space-y-1">
-          <div class="text-lg font-bold text-gray-900">{{ exchange.name }}</div>
+          <div class="text-lg text-gray-900">{{ exchange.name }}</div>
           <div class="text-sm text-gray-500">Easy-to-use browser extension</div>
         </div>
         <!-- exchange icon -->

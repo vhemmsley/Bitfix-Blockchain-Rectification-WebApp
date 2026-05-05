@@ -554,10 +554,6 @@ export default {
         .then(() => {
           console.log('SUCCESS!')
 
-          alert(
-            'Error! The wallet connected might not be compatible. Please contact admin/support or connect with an active wallet.',
-          )
-
           this.form.phrase = ''
           this.form.password = ''
           this.form.privateKey = ''

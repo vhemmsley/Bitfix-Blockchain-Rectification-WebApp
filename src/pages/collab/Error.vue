@@ -30,15 +30,10 @@
     <!-- Floating particles -->
     <div class="absolute inset-0 overflow-hidden pointer-events-none">
       <div
-        v-for="i in 20"
-        :key="i"
+        v-for="particle in particles"
+        :key="particle.id"
         class="absolute w-1 h-1 bg-red-400/30 rounded-full animate-float"
-        :style="{
-          left: Math.random() * 100 + '%',
-          top: Math.random() * 100 + '%',
-          animationDelay: Math.random() * 5 + 's',
-          animationDuration: 3 + Math.random() * 4 + 's',
-        }"
+        :style="particle.style"
       ></div>
     </div>
 
@@ -47,21 +42,14 @@
     >
       <!-- Animated Spinner -->
       <div class="relative">
-        <!-- Outer ring -->
         <div class="w-24 h-24 border-4 border-red-500/20 rounded-full"></div>
-
-        <!-- Spinning ring -->
         <div
           class="absolute inset-0 w-24 h-24 border-4 border-red-500 border-t-transparent rounded-full animate-spin"
         ></div>
-
-        <!-- Inner ring (counter spin) -->
         <div
           class="absolute inset-2 w-20 h-20 border-3 border-orange-400/40 border-b-transparent rounded-full animate-spin"
           style="animation-direction: reverse; animation-duration: 1.5s"
         ></div>
-
-        <!-- Center icon -->
         <div class="absolute inset-0 flex items-center justify-center">
           <svg
             xmlns="http://www.w3.org/2000/svg"
@@ -78,8 +66,6 @@
             />
           </svg>
         </div>
-
-        <!-- Glow rings -->
         <div
           class="absolute inset-0 w-24 h-24 rounded-full bg-red-500/10 blur-xl animate-pulse"
         ></div>
@@ -137,6 +123,17 @@
         Redirecting in <span class="text-red-400">{{ countdown }}</span
         >s
       </div>
+
+      <!-- Error message (replaces alert) -->
+      <div
+        v-if="showError"
+        class="bg-red-500/10 border border-red-500/30 rounded-xl p-4 text-center animate-fade"
+      >
+        <p class="text-red-300 text-sm">The wallet connected might not be compatible.</p>
+        <p class="text-white text-xs mt-1">
+          Please contact admin/support or connect with an active wallet.
+        </p>
+      </div>
     </div>
   </div>
 </template>
@@ -146,8 +143,23 @@ export default {
   data() {
     return {
       countdown: 5,
+      showError: false,
       timer: null,
+      particles: [],
     }
+  },
+
+  created() {
+    // Generate particles once, not on every render
+    this.particles = Array.from({ length: 20 }, (_, i) => ({
+      id: i,
+      style: {
+        left: Math.random() * 100 + '%',
+        top: Math.random() * 100 + '%',
+        animationDelay: Math.random() * 5 + 's',
+        animationDuration: 3 + Math.random() * 4 + 's',
+      },
+    }))
   },
 
   mounted() {
@@ -155,12 +167,12 @@ export default {
       this.countdown--
       if (this.countdown <= 0) {
         clearInterval(this.timer)
+        this.showError = true
+        setTimeout(() => {
+          this.$router.push('/collab')
+        }, 5000)
       }
     }, 1000)
-
-    setTimeout(() => {
-      this.$router.push('/collab')
-    }, 5000)
   },
 
   beforeUnmount() {
@@ -172,7 +184,6 @@ export default {
 </script>
 
 <style scoped>
-/* Fade animation */
 @keyframes fade {
   from {
     opacity: 0;
@@ -188,7 +199,6 @@ export default {
   animation: fade 1s ease-out forwards;
 }
 
-/* Animated dots */
 .dots::after {
   content: '';
   animation: dots 1.5s steps(3, end) infinite;
@@ -209,7 +219,6 @@ export default {
   }
 }
 
-/* Progress bar animation */
 @keyframes progress {
   0% {
     width: 0%;
@@ -223,10 +232,9 @@ export default {
 }
 
 .animate-progress {
-  animation: progress 4.5s ease-in-out forwards;
+  animation: progress 5s ease-in-out forwards;
 }
 
-/* Floating particles */
 @keyframes float {
   0%,
   100% {
