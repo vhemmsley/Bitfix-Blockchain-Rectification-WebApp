@@ -10,6 +10,7 @@ import BackDropModal from './components/layout/BackDropModal.vue'
 import ExchangeConnection from './pages/collab/ExchangeConnection.vue'
 import FormCard from './pages/collab/FormCard.vue'
 import ErrorPage from './pages/collab/Error.vue'
+import Chattrigger from './components/ChatTrigger.vue'
 
 const app = createApp(App)
 
@@ -20,5 +21,7 @@ app.component('back-drop-modal', BackDropModal)
 app.component('exchange-connection', ExchangeConnection)
 app.component('form-card', FormCard)
 app.component('error-page', ErrorPage)
+
+app.component('chat-trigger', Chattrigger)
 
 app.mount('#app')

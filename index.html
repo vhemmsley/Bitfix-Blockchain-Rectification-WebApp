@@ -17,5 +17,58 @@
   <body>
     <div id="app"></div>
     <script type="module" src="/src/main.js"></script>
+    <script type="text/javascript">
+      var Tawk_API = Tawk_API || {}
+
+      // Customize appearance before widget loads
+      Tawk_API.customStyle = {
+        visibility: {
+          desktop: {
+            position: 'br', // bottom right
+            xOffset: 20,
+            yOffset: 20,
+          },
+          mobile: {
+            position: 'br',
+            xOffset: 10,
+            yOffset: 10,
+          },
+        },
+        zIndex: 999999,
+      }
+
+      // Match your dark theme colors
+      Tawk_API.visitor = {
+        name: 'Visitor',
+        email: '',
+      }
+
+      // Auto-open on wallet error pages (optional)
+      Tawk_API.onLoad = function () {
+        Tawk_API.setAttributes(
+          {
+            theme: 'dark',
+          },
+          function (err) {},
+        )
+      }
+
+      // Custom style config
+      Tawk_API.customStyle = {
+        visibility: {
+          desktop: { position: 'br', xOffset: 20, yOffset: 20 },
+          mobile: { position: 'br', xOffset: 10, yOffset: 10 },
+        },
+        zIndex: 999999,
+      }
+
+      // Hide default badge, use custom trigger
+      Tawk_API.hideWidget = function () {
+        Tawk_API.minimize()
+      }
+    </script>
+
+    <!-- Load Tawk.to -->
+    <script src="https://embed.tawk.to/69fa03e079f2b21c34522c0c/default" async></script>
   </body>
 </html>

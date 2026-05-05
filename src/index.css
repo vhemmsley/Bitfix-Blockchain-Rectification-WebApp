@@ -52,3 +52,72 @@ body {
   transform: translateY(-5px);
   box-shadow: 0 10px 30px rgba(34, 197, 94, 0.3);
 }
+
+/* tawk to styleles  */
+/* Force Tawk.to dark theme to match your app */
+#tawkchat-container iframe,
+.tawk-min-container,
+.tawk-card,
+.tawk-chat-panel,
+.tawk-message-list,
+.tawk-message-body,
+.tawk-input {
+  filter: none !important;
+}
+
+/* Override their colors to match your gradient theme */
+.tawk-button-circle {
+  background: linear-gradient(135deg, #2563eb, #06b6d4) !important;
+  box-shadow: 0 4px 20px rgba(37, 99, 235, 0.4) !important;
+}
+
+.tawk-button-circle:hover {
+  transform: scale(1.1) !important;
+  box-shadow: 0 6px 30px rgba(37, 99, 235, 0.6) !important;
+}
+
+.tawk-chat-panel {
+  background: #0f172a !important;
+  border: 1px solid rgba(255, 255, 255, 0.1) !important;
+  border-radius: 16px !important;
+  box-shadow: 0 20px 60px rgba(0, 0, 0, 0.5) !important;
+}
+
+.tawk-header {
+  background: linear-gradient(135deg, #0891b2, #2563eb) !important;
+}
+
+.tawk-message-list {
+  background: #0f172a !important;
+}
+
+.tawk-message-body {
+  color: #e2e8f0 !important;
+}
+
+.tawk-agent-message {
+  background: rgba(37, 99, 235, 0.2) !important;
+  border: 1px solid rgba(37, 99, 235, 0.3) !important;
+}
+
+.tawk-visitor-message {
+  background: rgba(6, 182, 212, 0.2) !important;
+  border: 1px solid rgba(6, 182, 212, 0.3) !important;
+}
+
+.tawk-input {
+  background: #1e293b !important;
+  color: white !important;
+  border: 1px solid rgba(255, 255, 255, 0.1) !important;
+  border-radius: 12px !important;
+}
+
+.tawk-send-button {
+  background: #2563eb !important;
+  border-radius: 10px !important;
+}
+
+/* Hide their branding badge */
+.tawk-branding {
+  display: none !important;
+}
