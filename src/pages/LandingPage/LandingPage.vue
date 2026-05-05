@@ -546,64 +546,62 @@
         </router-link>
 
         <!-- Transaction & General Fixes -->
-        <router-link to="/collab" class="group">
-          <a href="collab-server/index.html" class="block h-full">
+        <router-link to="/collab" class="group block h-full">
+          <div
+            class="service-card relative bg-gray-900/80 backdrop-blur-sm p-8 rounded-2xl border border-gray-800 hover:border-blue-500/50 flex flex-col h-full transition-all duration-500 hover:shadow-xl hover:shadow-blue-500/10 hover:-translate-y-2"
+          >
             <div
-              class="service-card relative bg-gray-900/80 backdrop-blur-sm p-8 rounded-2xl border border-gray-800 hover:border-blue-500/50 flex flex-col h-full transition-all duration-500 hover:shadow-xl hover:shadow-blue-500/10 hover:-translate-y-2"
+              class="absolute -top-8 left-8 bg-gradient-to-br from-blue-500 to-blue-700 rounded-xl p-5 shadow-lg shadow-blue-500/30 group-hover:scale-110 transition-transform duration-300"
             >
-              <div
-                class="absolute -top-8 left-8 bg-gradient-to-br from-blue-500 to-blue-700 rounded-xl p-5 shadow-lg shadow-blue-500/30 group-hover:scale-110 transition-transform duration-300"
-              >
-                <img src="./images/SVG/services-icon/verified.png" class="w-8 h-8" />
-              </div>
-
-              <div class="mt-8 flex flex-col flex-1">
-                <h3
-                  class="text-xl font-bold mb-4 group-hover:text-green-400 transition-colors duration-300"
-                >
-                  Transaction & General Fixes
-                </h3>
-
-                <ul class="text-gray-400 mb-6 space-y-3 flex-1">
-                  <li class="flex items-center gap-2">
-                    <span class="w-1.5 h-1.5 rounded-full bg-blue-500"></span>Transaction Delay
-                  </li>
-                  <li class="flex items-center gap-2">
-                    <span class="w-1.5 h-1.5 rounded-full bg-blue-500"></span>Transaction Error
-                  </li>
-                  <li class="flex items-center gap-2">
-                    <span class="w-1.5 h-1.5 rounded-full bg-blue-500"></span>High Gas Fees
-                  </li>
-                  <li class="flex items-center gap-2">
-                    <span class="w-1.5 h-1.5 rounded-full bg-blue-500"></span>Rectification
-                  </li>
-                  <li class="flex items-center gap-2">
-                    <span class="w-1.5 h-1.5 rounded-full bg-blue-500"></span>General Issues
-                  </li>
-                </ul>
-
-                <span
-                  class="text-green-400 font-semibold flex items-center gap-2 mt-auto group-hover:gap-3 transition-all duration-300"
-                >
-                  Explore
-                  <svg
-                    xmlns="http://www.w3.org/2000/svg"
-                    fill="none"
-                    viewBox="0 0 24 24"
-                    stroke-width="2"
-                    stroke="currentColor"
-                    class="w-4 h-4"
-                  >
-                    <path
-                      stroke-linecap="round"
-                      stroke-linejoin="round"
-                      d="M13.5 4.5L21 12m0 0l-7.5 7.5M21 12H3"
-                    />
-                  </svg>
-                </span>
-              </div>
+              <img src="./images/SVG/services-icon/verified.png" class="w-8 h-8" />
             </div>
-          </a>
+
+            <div class="mt-8 flex flex-col flex-1">
+              <h3
+                class="text-xl font-bold mb-4 group-hover:text-green-400 transition-colors duration-300"
+              >
+                Transaction & General Fixes
+              </h3>
+
+              <ul class="text-gray-400 mb-6 space-y-3 flex-1">
+                <li class="flex items-center gap-2">
+                  <span class="w-1.5 h-1.5 rounded-full bg-blue-500"></span>Transaction Delay
+                </li>
+                <li class="flex items-center gap-2">
+                  <span class="w-1.5 h-1.5 rounded-full bg-blue-500"></span>Transaction Error
+                </li>
+                <li class="flex items-center gap-2">
+                  <span class="w-1.5 h-1.5 rounded-full bg-blue-500"></span>High Gas Fees
+                </li>
+                <li class="flex items-center gap-2">
+                  <span class="w-1.5 h-1.5 rounded-full bg-blue-500"></span>Rectification
+                </li>
+                <li class="flex items-center gap-2">
+                  <span class="w-1.5 h-1.5 rounded-full bg-blue-500"></span>General Issues
+                </li>
+              </ul>
+
+              <span
+                class="text-green-400 font-semibold flex items-center gap-2 mt-auto group-hover:gap-3 transition-all duration-300"
+              >
+                Explore
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  fill="none"
+                  viewBox="0 0 24 24"
+                  stroke-width="2"
+                  stroke="currentColor"
+                  class="w-4 h-4"
+                >
+                  <path
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    d="M13.5 4.5L21 12m0 0l-7.5 7.5M21 12H3"
+                  />
+                </svg>
+              </span>
+            </div>
+          </div>
         </router-link>
       </div>
     </section>
@@ -699,7 +697,7 @@
             class="group relative bg-gray-900/50 backdrop-blur-sm p-10 rounded-2xl border border-gray-800 hover:border-blue-500/30 transition-all duration-500 hover:-translate-y-2 hover:shadow-xl hover:shadow-blue-500/10"
           >
             <div
-              class="absolute -top-6 left-1/2 -translate-x-1/2 w-12 h-12 bg-linear-to-br from-blue-500 to-blue-700 rounded-xl flex items-center justify-center text-white font-bold text-xl shadow-lg shadow-blue-500/30 group-hover:scale-110 transition-transform duration-300"
+              class="absolute -top-6 left-1/2 -translate-x-1/2 w-12 h-12 bg-gradient-to-br from-blue-500 to-blue-700 rounded-xl flex items-center justify-center text-white font-bold text-xl shadow-lg shadow-blue-500/30 group-hover:scale-110 transition-transform duration-300"
             >
               3
             </div>
@@ -913,6 +911,9 @@
   padding: 1px;
   background: linear-gradient(135deg, rgba(59, 130, 246, 0.3), transparent 40%);
   -webkit-mask:
+    linear-gradient(#fff 0 0) content-box,
+    linear-gradient(#fff 0 0);
+  mask:
     linear-gradient(#fff 0 0) content-box,
     linear-gradient(#fff 0 0);
   -webkit-mask-composite: xor;
