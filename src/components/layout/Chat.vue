@@ -41,6 +41,8 @@
 
 <script>
 export default {
+  name: 'ChatTrigger', // optional but helpful
+
   data() {
     return {
       unreadCount: 0,

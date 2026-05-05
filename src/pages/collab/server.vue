@@ -1,9 +1,4 @@
 <template>
-  <!-- floating text -->
-  <div>
-    <router-view />
-    <chat-trigger></chat-trigger>
-  </div>
   <!-- collab body -->
   <div
     class="min-h-screen bg-gradient-to-br from-[#020617] via-[#0a0f1e] to-[#0f172a] relative overflow-hidden"

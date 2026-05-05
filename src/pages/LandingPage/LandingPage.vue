@@ -1,10 +1,5 @@
 <template>
   <div>
-    <!-- floating text -->
-    <div>
-      <router-view />
-      <chat-trigger></chat-trigger>
-    </div>
     <div class="background-gradient relative min-h-screen overflow-x-hidden">
       <!-- back to top button-->
       <div
