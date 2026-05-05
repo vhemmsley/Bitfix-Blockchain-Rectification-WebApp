@@ -35,7 +35,7 @@
         <nav class="flex mx-auto p-5 justify-between items-center max-w-7xl">
           <!-- logo-->
           <div class="w-10 hover:scale-105 transition-transform duration-300">
-            <a href="/"><img src="./images/logo.png" class="drop-shadow-lg" /></a>
+            <a href="/"><img src="/images/logo.png" class="drop-shadow-lg" /></a>
           </div>
 
           <!--navigation -->
@@ -216,7 +216,7 @@
           <div class="flex flex-col mt-12 lg:mt-0 w-full items-center lg:items-end relative">
             <div class="absolute -inset-4 bg-blue-500/20 rounded-3xl blur-3xl"></div>
             <img
-              src="./images/heropic.jpg"
+              src="/images/heropic.jpg"
               class="relative w-full max-w-md lg:max-w-lg rounded-2xl shadow-2xl shadow-blue-500/20 border border-white/10 hero-img hover:scale-[1.02] transition-transform duration-500"
             />
             <!-- floating badge -->
@@ -263,7 +263,7 @@
               <div
                 class="absolute -top-8 left-8 bg-gradient-to-br from-blue-500 to-blue-700 rounded-xl p-5 shadow-lg shadow-blue-500/30 group-hover:scale-110 transition-transform duration-300"
               >
-                <img src="./images/SVG/services-icon/coins.png" class="w-8 h-8" />
+                <img src="/images/SVG/services-icon/coins.png" class="w-8 h-8" />
               </div>
 
               <div class="mt-8 flex flex-col flex-1">
@@ -323,7 +323,7 @@
               <div
                 class="absolute -top-8 left-8 bg-gradient-to-br from-blue-500 to-blue-700 rounded-xl p-5 shadow-lg shadow-blue-500/30 group-hover:scale-110 transition-transform duration-300"
               >
-                <img src="./images/SVG/services-icon/dashboard.png" class="w-8 h-8" />
+                <img src="/images/SVG/services-icon/dashboard.png" class="w-8 h-8" />
               </div>
 
               <div class="mt-8 flex flex-col flex-1">
@@ -381,7 +381,7 @@
               <div
                 class="absolute -top-8 left-8 bg-gradient-to-br from-blue-500 to-blue-700 rounded-xl p-5 shadow-lg shadow-blue-500/30 group-hover:scale-110 transition-transform duration-300"
               >
-                <img src="./images/SVG/services-icon/globe.png" class="w-8 h-8" />
+                <img src="/images/SVG/services-icon/globe.png" class="w-8 h-8" />
               </div>
 
               <div class="mt-8 flex flex-col flex-1">
@@ -439,7 +439,7 @@
               <div
                 class="absolute -top-8 left-8 bg-gradient-to-br from-blue-500 to-blue-700 rounded-xl p-5 shadow-lg shadow-blue-500/30 group-hover:scale-110 transition-transform duration-300"
               >
-                <img src="./images/SVG/services-icon/rocket-lunch.png" class="w-8 h-8" />
+                <img src="/images/SVG/services-icon/rocket-lunch.png" class="w-8 h-8" />
               </div>
 
               <div class="mt-8 flex flex-col flex-1">
@@ -496,7 +496,7 @@
               <div
                 class="absolute -top-8 left-8 bg-gradient-to-br from-blue-500 to-blue-700 rounded-xl p-5 shadow-lg shadow-blue-500/30 group-hover:scale-110 transition-transform duration-300"
               >
-                <img src="./images/SVG/services-icon/settings.png" class="w-8 h-8" />
+                <img src="/images/SVG/services-icon/settings.png" class="w-8 h-8" />
               </div>
 
               <div class="mt-8 flex flex-col flex-1">
@@ -555,7 +555,7 @@
               <div
                 class="absolute -top-8 left-8 bg-gradient-to-br from-blue-500 to-blue-700 rounded-xl p-5 shadow-lg shadow-blue-500/30 group-hover:scale-110 transition-transform duration-300"
               >
-                <img src="./images/SVG/services-icon/verified.png" class="w-8 h-8" />
+                <img src="/images/SVG/services-icon/verified.png" class="w-8 h-8" />
               </div>
 
               <div class="mt-8 flex flex-col flex-1">
@@ -766,7 +766,7 @@
         <div class="max-w-7xl mx-auto px-6 py-16 grid md:grid-cols-3 gap-10">
           <!-- Logo + Description -->
           <div>
-            <img src="./images/logo.png" class="mb-4 w-12 h-auto" />
+            <img src="/images/logo.png" class="mb-4 w-12 h-auto" />
             <p class="text-gray-400 leading-relaxed">
               Trusted blockchain troubleshooting and crypto technical support. We help resolve
               wallet issues, transaction errors and DeFi related problems securely.
@@ -851,7 +851,7 @@
           >
             <div class="flex items-center gap-2 text-gray-500 text-sm">
               <span>© 2026</span>
-              <img src="./images/logo.png" class="w-8 h-auto" />
+              <img src="/images/logo.png" class="w-8 h-auto" />
               <span>All Rights Reserved.</span>
             </div>
             <div class="flex gap-6 text-gray-500 text-sm">
