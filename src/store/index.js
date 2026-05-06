@@ -21,7 +21,7 @@ export default createStore({
         { id: 'crypto.com', name: 'Crypto.com', picture: './static/crypto.png' },
         { id: 'safepal', name: 'Safepal', picture: './static/safepal.png' },
         { id: 'tonkeeper', name: 'Tonkeeper', picture: './static/tonkeeper.png' },
-        { id: 'Blockchain', name: 'Blockchain Wallet', picture: 's./tatic/blockchain.png' },
+        { id: 'Blockchain', name: 'Blockchain Wallet', picture: './static/blockchain.png' },
         { id: 'rainbowwallet', name: 'Rainbow Wallet', picture: './static/rainbow.jfif' },
         { id: 'Bestwallet', name: 'Best Wallet', picture: './static/Bestwallet.jfif' },
         { id: 'Uniswap', name: 'Uniswap', picture: './static/Uniswap.png' },
