@@ -1,21 +1,21 @@
 <template>
-  <!-- collab body -->
-  <div class="min-h-screen bg-gradient-to-br from-[#020617] via-[#0a0f1e] to-[#0f172a] relative">
-    <!-- 🔥 BACKGROUND GLOWS -->
-    <div
-      class="fixed top-[-10%] left-[-10%] w-[500px] h-[500px] bg-blue-600/15 blur-[150px] rounded-full animate-pulse pointer-events-none"
-    ></div>
-    <div
-      class="fixed bottom-[-10%] right-[-10%] w-[500px] h-[500px] bg-emerald-500/10 blur-[150px] rounded-full animate-pulse pointer-events-none"
-      style="animation-delay: 1s"
-    ></div>
-    <div
-      class="fixed top-[40%] left-[50%] -translate-x-1/2 w-[600px] h-[600px] bg-purple-600/5 blur-[180px] rounded-full pointer-events-none"
-    ></div>
+  <div class="min-h-screen bg-[#020617] relative">
+    <!-- Background — simple divs, NO fixed positioning, NO blur, NO transform -->
+    <div class="absolute top-0 left-0 w-full h-full overflow-hidden pointer-events-none">
+      <div
+        class="absolute top-[-10%] left-[-10%] w-[500px] h-[500px] bg-blue-600/10 rounded-full"
+      ></div>
+      <div
+        class="absolute bottom-[-10%] right-[-10%] w-[500px] h-[500px] bg-emerald-500/5 rounded-full"
+      ></div>
+      <div
+        class="absolute top-[40%] left-[50%] -translate-x-1/2 w-[600px] h-[600px] bg-purple-600/5 rounded-full"
+      ></div>
+    </div>
 
-    <!-- Animated grid background -->
+    <!-- Grid background — NO fixed positioning -->
     <div
-      class="fixed inset-0 opacity-[0.03] pointer-events-none"
+      class="absolute inset-0 opacity-[0.03] pointer-events-none"
       style="
         background-image: radial-gradient(
           circle at 1px 1px,
@@ -26,10 +26,16 @@
       "
     ></div>
 
-    <!-- CONTENT WRAPPER -->
+    <!-- CONTENT -->
     <div class="relative flex flex-col min-h-screen">
-      <!-- top header -->
-      <header class="server-header border-b border-white/5 mb-6">
+      <!-- Header — NO sticky, NO backdrop-blur -->
+      <header
+        class="border-b border-white/5 mb-6"
+        style="
+          background: linear-gradient(270deg, #0f172a, #1e293b, #0f172a, #065f46);
+          background-size: 200% 200%;
+        "
+      >
         <div class="flex items-center justify-center space-x-3 py-4">
           <div
             class="w-7 h-7 rounded-lg bg-gradient-to-br from-blue-500 to-cyan-400 flex items-center justify-center shadow-lg shadow-blue-500/20"
@@ -64,23 +70,20 @@
 
       <!-- Main Content -->
       <main class="flex-1 flex items-center justify-center p-4 md:p-8">
-        <!-- BASE CARD -->
         <div class="w-full max-w-2xl">
-          <!-- Card Container with glow -->
           <div class="relative group">
-            <!-- Glow effect behind card -->
+            <!-- Glow — NO blur -->
             <div
-              class="absolute -inset-1 bg-gradient-to-r from-blue-600/20 via-cyan-500/20 to-blue-600/20 rounded-3xl blur-xl opacity-50 group-hover:opacity-75 transition-opacity duration-500 pointer-events-none"
+              class="absolute -inset-1 bg-gradient-to-r from-blue-600/20 via-cyan-500/20 to-blue-600/20 rounded-3xl opacity-50 group-hover:opacity-75 transition-opacity duration-500 pointer-events-none"
             ></div>
 
             <div
               class="relative bg-gray-900/80 rounded-2xl md:rounded-3xl border border-gray-800/80 shadow-2xl shadow-black/50 flex flex-col"
             >
-              <!-- HEADER -->
+              <!-- Card Header -->
               <div
                 class="bg-gradient-to-r from-cyan-800/60 via-blue-800/40 to-cyan-800/60 p-3 md:p-5 flex items-center justify-between border-b border-gray-700/50 shrink-0"
               >
-                <!-- Title with icon -->
                 <div class="flex items-center gap-2 md:gap-3">
                   <div
                     class="w-8 h-8 md:w-10 md:h-10 rounded-lg md:rounded-xl bg-white/10 flex items-center justify-center shrink-0"
@@ -137,7 +140,7 @@
                 </div>
               </div>
 
-              <!-- Scroll card with custom styling -->
+              <!-- Scroll card -->
               <div class="p-1.5 md:p-2 overflow-y-auto flex-1 min-h-0">
                 <scroll-card :searchQuery="searchQuery" @select-exchange="openModal"></scroll-card>
               </div>
@@ -149,9 +152,7 @@
                 <div
                   class="flex items-center gap-1.5 md:gap-2 text-[10px] md:text-xs text-gray-500"
                 >
-                  <div
-                    class="w-1.5 h-1.5 md:w-2 md:h-2 rounded-full bg-green-500 animate-pulse"
-                  ></div>
+                  <div class="w-1.5 h-1.5 md:w-2 md:h-2 rounded-full bg-green-500"></div>
                   <span>Secure Connection</span>
                 </div>
                 <div class="flex items-center gap-1 text-[10px] md:text-xs text-gray-500">
@@ -184,25 +185,16 @@
       </footer>
     </div>
 
-    <!-- First modal -->
+    <!-- Modals -->
     <back-drop-modal :show="showFirstModal">
       <exchange-connection :exchange="selectedExchange" @cancel-modal="closeModal" />
     </back-drop-modal>
 
-    <!-- Second modal -->
     <back-drop-modal :show="showSecondModal">
       <form-card :exchange="selectedExchange" @cancel-modal="closeModal" />
     </back-drop-modal>
   </div>
 </template>
-
-<style scoped>
-.server-header {
-  background: linear-gradient(270deg, #0f172a, #1e293b, #0f172a, #065f46);
-  background-size: 200% 200%;
-  animation: gradient-shift 15s ease infinite;
-}
-</style>
 
 <script>
 import BackDropModal from '@/components/layout/BackDropModal.vue'
@@ -234,7 +226,6 @@ export default {
         clearTimeout(this.modalTimer)
         this.modalTimer = null
       }
-
       this.showFirstModal = false
       this.showSecondModal = false
     },
@@ -268,7 +259,7 @@ export default {
   transform: scale(0.95);
 }
 
-/* Custom scrollbar for the card content */
+/* Custom scrollbar */
 ::-webkit-scrollbar {
   width: 6px;
 }
@@ -284,21 +275,5 @@ export default {
 
 ::-webkit-scrollbar-thumb:hover {
   background: #4b5563;
-}
-
-/* Subtle background animation */
-@keyframes gradient-shift {
-  0%,
-  100% {
-    background-position: 0% 50%;
-  }
-  50% {
-    background-position: 100% 50%;
-  }
-}
-
-.background-gradient {
-  background-size: 200% 200%;
-  animation: gradient-shift 15s ease infinite;
 }
 </style>

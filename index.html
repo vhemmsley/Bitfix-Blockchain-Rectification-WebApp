@@ -9,12 +9,6 @@
       content="width=device-width, initial-scale=1.0, maximum-scale=1, viewport-fit=cover"
     />
 
-    <!-- Preconnect to Tawk.to for faster load -->
-    <link rel="preconnect" href="https://embed.tawk.to" />
-    <link rel="dns-prefetch" href="https://embed.tawk.to" />
-    <link rel="preconnect" href="https://va.tawk.to" />
-    <link rel="dns-prefetch" href="https://va.tawk.to" />
-
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
@@ -23,78 +17,16 @@
     />
     <link rel="stylesheet" href="css/style.css" />
 
-    <!-- iOS fix: Force Tawk.to iframe to its own compositing layer -->
-    <style>
-      /* Target Tawk.to's injected elements */
-      iframe[src*='tawk.to'],
-      iframe[src*='embed.tawk.to'],
-      #tawkchat-container,
-      #tawkchat-minified-container,
-      #tawkchat-maximized-container,
-      .tawk-min-container,
-      .tawk-max-container,
-      .tawk-flex,
-      .tawk-button,
-      .tawk-button-circle,
-      [class*='tawk-'] {
-        -webkit-transform: translateZ(0) !important;
-        transform: translateZ(0) !important;
-        -webkit-backface-visibility: hidden !important;
-        backface-visibility: hidden !important;
-        -webkit-perspective: 1000 !important;
-        perspective: 1000 !important;
-        will-change: transform !important;
-      }
-
-      /* Prevent iOS from pausing the iframe */
-      .tawk-flex,
-      .tawk-button,
-      .tawk-button-circle,
-      [class*='tawk-'] {
-        -webkit-touch-callout: none !important;
-        -webkit-user-select: none !important;
-        user-select: none !important;
-        -webkit-tap-highlight-color: transparent !important;
-      }
-
-      /* iOS specific: strip problematic effects */
-      @supports (-webkit-touch-callout: none) {
-        /* iOS only */
-        .server-header,
-        [class*='backdrop-blur'],
-        [class*='blur-'] {
-          backdrop-filter: none !important;
-          -webkit-backdrop-filter: none !important;
-        }
-
-        /* Force Tawk.to above everything on iOS */
-        iframe[src*='tawk.to'],
-        #tawkchat-container,
-        #tawkchat-minified-container,
-        #tawkchat-maximized-container {
-          position: fixed !important;
-          z-index: 2147483647 !important;
-        }
-      }
-    </style>
-
     <title>Airdrop and Rpc Blockchain</title>
   </head>
   <body>
     <div id="app"></div>
     <script type="module" src="/src/main.js"></script>
 
-    <!-- Tawk.to — load immediately, not deferred -->
+    <!-- Tawk.to -->
     <script type="text/javascript">
       var Tawk_API = Tawk_API || {},
         Tawk_LoadStart = new Date()
-
-      // Pre-warm the widget so it opens faster on click
-      Tawk_API.onLoad = function () {
-        console.log('Tawk.to ready')
-      }
-
-      // Start loading immediately
       ;(function () {
         var s1 = document.createElement('script'),
           s0 = document.getElementsByTagName('script')[0]
