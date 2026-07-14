@@ -1,6 +1,9 @@
-<!-- ChatTrigger.vue -->
 <template>
-  <div @click="openChat" class="fixed bottom-6 right-6 z-50 group cursor-pointer">
+  <div
+    v-if="!isChatOpen"
+    @click="openChat"
+    class="fixed bottom-6 right-6 z-50 group cursor-pointer"
+  >
     <!-- Pulse ring -->
     <div class="absolute inset-0 bg-blue-500 rounded-full animate-ping opacity-20"></div>
 
@@ -41,34 +44,46 @@
 
 <script>
 export default {
-  name: 'ChatTrigger', // optional but helpful
+  name: 'ChatTrigger',
 
   data() {
     return {
       unreadCount: 0,
+      isChatOpen: false,
     }
   },
 
   mounted() {
-    // Listen for Tawk.to events
-    window.addEventListener('tawkEvent', this.handleTawkEvent)
+    window.addEventListener('tawkUnread', this.handleUnread)
+    window.addEventListener('tawkMaximized', this.handleMaximized)
+    window.addEventListener('tawkMinimized', this.handleMinimized)
   },
 
   beforeUnmount() {
-    window.removeEventListener('tawkEvent', this.handleTawkEvent)
+    window.removeEventListener('tawkUnread', this.handleUnread)
+    window.removeEventListener('tawkMaximized', this.handleMaximized)
+    window.removeEventListener('tawkMinimized', this.handleMinimized)
   },
 
   methods: {
     openChat() {
       if (window.Tawk_API && window.Tawk_API.maximize) {
         window.Tawk_API.maximize()
+        this.isChatOpen = true
       }
     },
 
-    handleTawkEvent(e) {
-      if (e.detail.event === 'unreadMessage') {
-        this.unreadCount = e.detail.data || 0
-      }
+    handleUnread(e) {
+      // Tawk.to passes unread count data
+      this.unreadCount = e.detail?.count || e.detail || 0
+    },
+
+    handleMaximized() {
+      this.isChatOpen = true
+    },
+
+    handleMinimized() {
+      this.isChatOpen = false
     },
   },
 }

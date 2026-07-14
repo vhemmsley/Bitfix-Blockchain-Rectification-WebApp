@@ -4,7 +4,6 @@
       <component :is="Component" />
     </Transition>
   </router-view>
-  <chat-trigger></chat-trigger>
 </template>
 
 <style>
