@@ -1,6 +1,6 @@
 <template>
   <div class="min-h-screen bg-[#020617] relative">
-    <!-- Background — simple divs, NO fixed positioning, NO blur, NO transform -->
+    <!-- Background glows -->
     <div class="absolute top-0 left-0 w-full h-full overflow-hidden pointer-events-none">
       <div
         class="absolute top-[-10%] left-[-10%] w-[500px] h-[500px] bg-blue-600/10 rounded-full"
@@ -13,7 +13,7 @@
       ></div>
     </div>
 
-    <!-- Grid background — NO fixed positioning -->
+    <!-- Grid background -->
     <div
       class="absolute inset-0 opacity-[0.03] pointer-events-none"
       style="
@@ -28,7 +28,7 @@
 
     <!-- CONTENT -->
     <div class="relative flex flex-col min-h-screen">
-      <!-- Header — NO sticky, NO backdrop-blur -->
+      <!-- Header -->
       <header
         class="border-b border-white/5 mb-6"
         style="
@@ -69,16 +69,16 @@
       </header>
 
       <!-- Main Content -->
-      <main class="flex-1 flex items-center justify-center p-4 md:p-8">
+      <main class="flex-1 flex items-start justify-center p-4 md:p-8 pt-0 md:pt-0">
         <div class="w-full max-w-2xl">
           <div class="relative group">
-            <!-- Glow — NO blur -->
+            <!-- Glow -->
             <div
               class="absolute -inset-1 bg-gradient-to-r from-blue-600/20 via-cyan-500/20 to-blue-600/20 rounded-3xl opacity-50 group-hover:opacity-75 transition-opacity duration-500 pointer-events-none"
             ></div>
 
             <div
-              class="relative bg-gray-900/80 rounded-2xl md:rounded-3xl border border-gray-800/80 shadow-2xl shadow-black/50 flex flex-col"
+              class="relative bg-gray-900/80 rounded-2xl md:rounded-3xl border border-gray-800/80 shadow-2xl shadow-black/50 flex flex-col max-h-[calc(100vh-140px)]"
             >
               <!-- Card Header -->
               <div
@@ -140,8 +140,8 @@
                 </div>
               </div>
 
-              <!-- Scroll card -->
-              <div class="p-1.5 md:p-2 overflow-y-auto flex-1 min-h-0">
+              <!-- Scrollable exchange list -->
+              <div class="overflow-y-auto flex-1 min-h-0 custom-scrollbar">
                 <scroll-card :searchQuery="searchQuery" @select-exchange="openModal"></scroll-card>
               </div>
 
@@ -180,7 +180,7 @@
       </main>
 
       <!-- Footer -->
-      <footer class="py-4 text-center">
+      <footer class="py-4 text-center shrink-0">
         <p class="text-gray-600 text-xs">Powered by EvmPortalResolve Network</p>
       </footer>
     </div>
@@ -259,21 +259,27 @@ export default {
   transform: scale(0.95);
 }
 
-/* Custom scrollbar */
-::-webkit-scrollbar {
-  width: 6px;
+/* Custom scrollbar for the exchange list */
+.custom-scrollbar::-webkit-scrollbar {
+  width: 5px;
 }
 
-::-webkit-scrollbar-track {
+.custom-scrollbar::-webkit-scrollbar-track {
   background: transparent;
 }
 
-::-webkit-scrollbar-thumb {
+.custom-scrollbar::-webkit-scrollbar-thumb {
   background: #374151;
-  border-radius: 3px;
+  border-radius: 10px;
 }
 
-::-webkit-scrollbar-thumb:hover {
+.custom-scrollbar::-webkit-scrollbar-thumb:hover {
   background: #4b5563;
+}
+
+/* Firefox */
+.custom-scrollbar {
+  scrollbar-width: thin;
+  scrollbar-color: #374151 transparent;
 }
 </style>
