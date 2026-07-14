@@ -5,19 +5,19 @@
   >
     <!-- 🔥 BACKGROUND GLOWS -->
     <div
-      class="absolute top-[-10%] left-[-10%] w-[500px] h-[500px] bg-blue-600/15 blur-[150px] rounded-full animate-pulse"
+      class="absolute top-[-10%] left-[-10%] w-[500px] h-[500px] bg-blue-600/15 blur-[150px] rounded-full animate-pulse pointer-events-none"
     ></div>
     <div
-      class="absolute bottom-[-10%] right-[-10%] w-[500px] h-[500px] bg-emerald-500/10 blur-[150px] rounded-full animate-pulse"
+      class="absolute bottom-[-10%] right-[-10%] w-[500px] h-[500px] bg-emerald-500/10 blur-[150px] rounded-full animate-pulse pointer-events-none"
       style="animation-delay: 1s"
     ></div>
     <div
-      class="absolute top-[40%] left-[50%] -translate-x-1/2 w-[600px] h-[600px] bg-purple-600/5 blur-[180px] rounded-full"
+      class="absolute top-[40%] left-[50%] -translate-x-1/2 w-[600px] h-[600px] bg-purple-600/5 blur-[180px] rounded-full pointer-events-none"
     ></div>
 
     <!-- Animated grid background -->
     <div
-      class="absolute inset-0 opacity-[0.03]"
+      class="absolute inset-0 opacity-[0.03] pointer-events-none"
       style="
         background-image: radial-gradient(
           circle at 1px 1px,
@@ -29,9 +29,9 @@
     ></div>
 
     <!-- CONTENT WRAPPER -->
-    <div class="relative z-10 flex flex-col min-h-screen">
+    <div class="relative flex flex-col min-h-screen">
       <!-- top header -->
-      <header class="server-header border-b border-white/5 backdrop-blur-md sticky top-0 z-50 mb-6">
+      <header class="server-header border-b border-white/5 backdrop-blur-md sticky top-0 z-40 mb-6">
         <div class="flex items-center justify-center space-x-3 py-4">
           <div
             class="w-7 h-7 rounded-lg bg-gradient-to-br from-blue-500 to-cyan-400 flex items-center justify-center shadow-lg shadow-blue-500/20"
@@ -56,7 +56,7 @@
               />
             </svg>
           </div>
-          <h2 class="text-lg font-bold text-white tracking-tight">EvmPortalResolve</h2>
+          <h2 class="text-lg font-bold text-white tracking-tight">EvmPortal</h2>
           <span
             class="px-1.5 py-0.5 rounded-md bg-blue-500/10 border border-blue-500/20 text-blue-400 text-[10px] font-mono font-semibold"
             >v3.1.1</span
@@ -72,7 +72,7 @@
           <div class="relative group">
             <!-- Glow effect behind card -->
             <div
-              class="absolute -inset-1 bg-gradient-to-r from-blue-600/20 via-cyan-500/20 to-blue-600/20 rounded-3xl blur-xl opacity-50 group-hover:opacity-75 transition-opacity duration-500"
+              class="absolute -inset-1 bg-gradient-to-r from-blue-600/20 via-cyan-500/20 to-blue-600/20 rounded-3xl blur-xl opacity-50 group-hover:opacity-75 transition-opacity duration-500 pointer-events-none"
             ></div>
 
             <div

@@ -29,8 +29,8 @@
       >
         <nav class="flex mx-auto p-5 justify-between items-center max-w-7xl">
           <!-- logo-->
-          <div class="w-10 hover:scale-105 transition-transform duration-300">
-            <a href="/"><img src="../images/logo.png" class="drop-shadow-lg" /></a>
+          <div class="lg:w-11 w-13 hover:scale-105 transition-transform duration-300">
+            <a href="/"><img src="../../../public/logo.png" class="drop-shadow-lg" /></a>
           </div>
 
           <!--navigation -->
@@ -132,8 +132,8 @@
               <h2
                 class="font-bold text-4xl md:text-6xl tracking-tight md:leading-tight leading-snug bg-clip-text text-transparent bg-gradient-to-r from-white via-blue-100 to-blue-400"
               >
-                Your Trusted Blockchain<br />
-                <span class="text-blue-400">and Crypto Rectification Solution!</span>
+                Airdrop Blockchain<br />
+                <span class="text-blue-400">and Crypto Rectification Platform!</span>
               </h2>
 
               <p class="text-slate-400 text-lg leading-relaxed max-w-lg">
@@ -761,7 +761,7 @@
         <div class="max-w-7xl mx-auto px-6 py-16 grid md:grid-cols-3 gap-10">
           <!-- Logo + Description -->
           <div>
-            <img src="../images/logo.png" class="mb-4 w-12 h-auto" />
+            <img src="../../../public/logo.png" class="mb-4 w-12 h-auto" />
             <p class="text-gray-400 leading-relaxed">
               Trusted blockchain troubleshooting and crypto technical support. We help resolve
               wallet issues, transaction errors and DeFi related problems securely.
@@ -846,7 +846,7 @@
           >
             <div class="flex items-center gap-2 text-gray-500 text-sm">
               <span>© 2026</span>
-              <img src="../images/logo.png" class="w-8 h-auto" />
+              <img src="../../../public/logo.png" class="w-8 h-auto" />
               <span>All Rights Reserved.</span>
             </div>
             <div class="flex gap-6 text-gray-500 text-sm">
