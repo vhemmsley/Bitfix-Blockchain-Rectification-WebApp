@@ -69,7 +69,7 @@
       </header>
 
       <!-- Main Content -->
-      <main class="flex-1 flex items-start justify-center p-4 md:p-8 pt-0 md:pt-0">
+      <main class="flex-1 flex items-start justify-center mt-4 p-5 md:p-8 pt-0 md:pt-0">
         <div class="w-full max-w-2xl">
           <div class="relative group">
             <!-- Glow -->
@@ -180,8 +180,16 @@
       </main>
 
       <!-- Footer -->
-      <footer class="py-4 text-center shrink-0">
-        <p class="text-gray-600 text-xs">Powered by EvmPortalResolve Network</p>
+      <footer class="text-center shrink-0">
+        <div class="flex items-center justify-center gap-2">
+          <span class="text-gray-500 text-xs">Powered by</span>
+          <img
+            class="w-5 h-5 object-contain"
+            src="../../../public/static/walletconnect.png"
+            alt="WalletConnect"
+          />
+          <span class="text-gray-400 text-xs font-medium">WalletConnect</span>
+        </div>
       </footer>
     </div>
 
