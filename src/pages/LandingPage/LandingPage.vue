@@ -132,7 +132,7 @@
               <h2
                 class="font-bold text-4xl md:text-6xl tracking-tight md:leading-tight leading-snug bg-clip-text text-transparent bg-gradient-to-r from-white via-blue-100 to-blue-400"
               >
-                Airdrop Blockchain<br />
+                Your Airdrop Blockchain<br />
                 <span class="text-blue-400">and Crypto Rectification Platform!</span>
               </h2>
 
