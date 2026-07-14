@@ -82,7 +82,7 @@
             >
               <!-- Card Header -->
               <div
-                class="bg-gradient-to-r from-cyan-800/60 via-blue-800/40 to-cyan-800/60 p-3 md:p-5 flex items-center justify-between border-b border-gray-700/50 shrink-0"
+                class="bg-gradient-to-r rounded-2xl md:rounded-3xl from-cyan-800/60 via-blue-800/40 to-cyan-800/60 p-3 md:p-5 flex items-center justify-between border-b border-gray-700/50 shrink-0"
               >
                 <div class="flex items-center gap-2 md:gap-3">
                   <div
