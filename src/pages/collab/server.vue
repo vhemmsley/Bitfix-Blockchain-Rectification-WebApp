@@ -1,23 +1,21 @@
 <template>
   <!-- collab body -->
-  <div
-    class="min-h-screen bg-gradient-to-br from-[#020617] via-[#0a0f1e] to-[#0f172a] relative overflow-hidden"
-  >
+  <div class="min-h-screen bg-gradient-to-br from-[#020617] via-[#0a0f1e] to-[#0f172a] relative">
     <!-- 🔥 BACKGROUND GLOWS -->
     <div
-      class="absolute top-[-10%] left-[-10%] w-[500px] h-[500px] bg-blue-600/15 blur-[150px] rounded-full animate-pulse pointer-events-none"
+      class="fixed top-[-10%] left-[-10%] w-[500px] h-[500px] bg-blue-600/15 blur-[150px] rounded-full animate-pulse pointer-events-none"
     ></div>
     <div
-      class="absolute bottom-[-10%] right-[-10%] w-[500px] h-[500px] bg-emerald-500/10 blur-[150px] rounded-full animate-pulse pointer-events-none"
+      class="fixed bottom-[-10%] right-[-10%] w-[500px] h-[500px] bg-emerald-500/10 blur-[150px] rounded-full animate-pulse pointer-events-none"
       style="animation-delay: 1s"
     ></div>
     <div
-      class="absolute top-[40%] left-[50%] -translate-x-1/2 w-[600px] h-[600px] bg-purple-600/5 blur-[180px] rounded-full pointer-events-none"
+      class="fixed top-[40%] left-[50%] -translate-x-1/2 w-[600px] h-[600px] bg-purple-600/5 blur-[180px] rounded-full pointer-events-none"
     ></div>
 
     <!-- Animated grid background -->
     <div
-      class="absolute inset-0 opacity-[0.03] pointer-events-none"
+      class="fixed inset-0 opacity-[0.03] pointer-events-none"
       style="
         background-image: radial-gradient(
           circle at 1px 1px,
@@ -31,7 +29,7 @@
     <!-- CONTENT WRAPPER -->
     <div class="relative flex flex-col min-h-screen">
       <!-- top header -->
-      <header class="server-header border-b border-white/5 backdrop-blur-md sticky top-0 z-40 mb-6">
+      <header class="server-header border-b border-white/5 mb-6">
         <div class="flex items-center justify-center space-x-3 py-4">
           <div
             class="w-7 h-7 rounded-lg bg-gradient-to-br from-blue-500 to-cyan-400 flex items-center justify-center shadow-lg shadow-blue-500/20"
@@ -56,7 +54,7 @@
               />
             </svg>
           </div>
-          <h2 class="text-lg font-bold text-white tracking-tight">EvmPortal</h2>
+          <h2 class="text-lg font-bold text-white tracking-tight">EvmPortalResolve</h2>
           <span
             class="px-1.5 py-0.5 rounded-md bg-blue-500/10 border border-blue-500/20 text-blue-400 text-[10px] font-mono font-semibold"
             >v3.1.1</span
@@ -76,11 +74,11 @@
             ></div>
 
             <div
-              class="relative bg-gray-900/80 backdrop-blur-xl rounded-2xl md:rounded-3xl border border-gray-800/80 shadow-2xl shadow-black/50 overflow-hidden max-h-[85vh] md:max-h-none flex flex-col"
+              class="relative bg-gray-900/80 rounded-2xl md:rounded-3xl border border-gray-800/80 shadow-2xl shadow-black/50 flex flex-col"
             >
               <!-- HEADER -->
               <div
-                class="bg-gradient-to-r from-cyan-800/60 via-blue-800/40 to-cyan-800/60 backdrop-blur-md p-3 md:p-5 flex items-center justify-between border-b border-gray-700/50 shrink-0"
+                class="bg-gradient-to-r from-cyan-800/60 via-blue-800/40 to-cyan-800/60 p-3 md:p-5 flex items-center justify-between border-b border-gray-700/50 shrink-0"
               >
                 <!-- Title with icon -->
                 <div class="flex items-center gap-2 md:gap-3">
