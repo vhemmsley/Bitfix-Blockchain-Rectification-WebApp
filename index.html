@@ -5,6 +5,13 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <link rel="icon" href="/public/logo.png" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1" />
+
+    <!-- Preconnect to Tawk.to for faster load -->
+    <link rel="preconnect" href="https://embed.tawk.to" />
+    <link rel="dns-prefetch" href="https://embed.tawk.to" />
+    <link rel="preconnect" href="https://va.tawk.to" />
+    <link rel="dns-prefetch" href="https://va.tawk.to" />
+
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
@@ -18,10 +25,18 @@
     <div id="app"></div>
     <script type="module" src="/src/main.js"></script>
 
-    <!-- Tawk.to — placed AFTER #app so it injects at body level -->
+    <!-- Tawk.to — load immediately, not deferred -->
     <script type="text/javascript">
       var Tawk_API = Tawk_API || {},
         Tawk_LoadStart = new Date()
+
+      // Pre-warm the widget so it opens faster on click
+      Tawk_API.onLoad = function () {
+        // Widget is ready — you can log this if you want
+        console.log('Tawk.to ready')
+      }
+
+      // Start loading immediately
       ;(function () {
         var s1 = document.createElement('script'),
           s0 = document.getElementsByTagName('script')[0]
